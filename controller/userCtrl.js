@@ -38,19 +38,9 @@ const signupController = async (req, res) => {
       email: req.body.email,
       firstname: req.body.firstname,
       lastname: req.body.lastname,
-      id_card: req.body.id_card,
       phone_number: req.body.phone_number,
       address: req.body.address,
       sex: req.body.sex,
-      // image_url: req.body.image_url,
-      // member_id: req.body.member_id,
-      // role: req.body.role,
-      // isMember: req.body.isMember,
-      // isAdmin: req.body.isAdmin,
-      // isEmployee: req.body.isEmployee,
-      // isTrainer: req.body.isTrainer,
-
-
     });
     await newUser.save();
     res.status(201).send({ message: "Register Successfully", success: true });
@@ -270,7 +260,6 @@ const paymentController = async (req, res) => {
     if (req.body && req.body.image) {
       const newPayment = new payment({
         email: req.body.email,
-        address: req.body.address,
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         phoneNumber: req.body.phoneNumber,
